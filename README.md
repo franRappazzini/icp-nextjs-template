@@ -1,6 +1,6 @@
 # Internet Computer - Next.js Template
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) modified to be an [frontend asset canister](https://internetcomputer.org/docs/current/references/asset-canister) within [Internet Computer](https://internetcomputer.org/) blockchain.
+This is a [Next.js](https://nextjs.org/) v14 (app router) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) modified to be an [frontend asset canister](https://internetcomputer.org/docs/current/references/asset-canister) within [Internet Computer](https://internetcomputer.org/) blockchain.
 
 ## Setting Asset Canister
 
