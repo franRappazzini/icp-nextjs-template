@@ -1,4 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Internet Computer - Next.js Template
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) modified to be an [frontend asset canister](https://internetcomputer.org/docs/current/references/asset-canister) within [Internet Computer](https://internetcomputer.org/) blockchain.
+
+## Setting Asset Canister
+
+### 1. In `next.config.js` file add this config.
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*",
+      },
+    ],
+    unoptimized: true,
+  },
+};
+
+export default nextConfig;
+```
+
+### 2. Create an `dfx.json` file in root.
+
+```json
+{
+  "canisters": {
+    "frontend": {
+      "frontend": { "entryPoint": "out/index.html" },
+      "source": ["out"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
+```
+
+### 3. Add paths in `.gitignore`.
+
+```bash
+# icp
+.dfx/
+src/declarations/
+.env
+```
+
+### 4. Testing.
+
+```bash
+dfx start --clean --background
+dfx deploy
+```
+
+If after run those commands the output is url is ok. You can continue this guide
 
 ## Getting Started
 
